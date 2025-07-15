@@ -1,1 +1,16 @@
-knmk
+name: Test PHP code
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install PHP
+        run: sudo apt install php -y
+
+      - name: Run PHP script
+        run: php index.php
+
